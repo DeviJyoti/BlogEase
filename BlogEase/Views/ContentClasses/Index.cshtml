@@ -1,0 +1,45 @@
+﻿@model IEnumerable<BlogEase.Models.ContentClass>
+
+@{
+    ViewData["Title"] = "Index";
+    ViewBag.BlogList = Model;
+}
+
+<h1>Your Blogs</h1>
+
+<div>
+    @if (ViewBag.BlogList.Count > 0)
+    {
+        @foreach (var item in ViewBag.BlogList)
+        {
+            <div class="blogDiv">
+                <h1 class="title_item">@item.Title</h1>
+                <p class="content_item">
+                    @if(item.Content.Length > 200)
+                    {
+                        @Html.Raw(item.Content.Substring(0, 200) + ".....")
+                    }
+                    else
+                    {
+                        @Html.Raw(item.Content )
+                        
+                    }
+                       
+                    
+                    
+                    
+                </p>
+                
+                <br />
+                <a class="edit" asp-action="Edit" asp-route-id="@item.Id">Edit</a> 
+                <a class="details" asp-action="Details" asp-route-id="@item.Id">Read Full Blog</a> 
+                <a class="delete" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </div>
+        }
+    }
+</div>
+
+
+
+
+

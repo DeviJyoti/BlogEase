@@ -1,0 +1,31 @@
+﻿@model BlogEase.Models.ContentClass
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+@using (Html.BeginForm("Create", "ContentClasses", FormMethod.Post))
+{
+    <div class="title_class">
+        <h3 class="title_heading">Title</h3>
+        @Html.TextBoxFor(m => m.Title, new { @class = "title_textbox", placeholder = "Write your content Title...", required = "required" })
+    </div>
+    <br />
+    <div class="content_class">
+        <h3 class="content_heading">Content</h3>
+        @Html.TextAreaFor(m => m.Content, new { @class = "content_textarea", placeholder = "Write your content here...", required = "required" })
+    </div>
+
+    <div button-container>
+
+        <input type='button' class="goback" value='Go Back' id='myButton' onClick='redirectOnClick()' />
+        <script>
+            function redirectOnClick() {
+                document.location = '/Home/Index';
+            }
+        </script>
+
+        <input class="save" type="Submit" value="Save" />
+    </div>
+}

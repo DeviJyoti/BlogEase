@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="heading_div">
+    <h1 class="display-4">Publish your passions, your way</h1>
+    <h3>Create a unique and beautiful blog easily</h3>
+    
+</div>
+
+<input type='button' class="button" value='Create New Blog' id='myButton' onClick='redirectOnClick1()' />
+<script>
+    function redirectOnClick1() {
+        document.location = '/ContentClasses/Create';
+    }
+</script>
+
+<input type='button' class="button" value='View Blogs' id='myButton' onClick='redirectOnClick2()' />
+<script>
+    function redirectOnClick2() {
+        document.location = '/ContentClasses/Index';
+    }
+</script>
+
+<br />
+<br />
+
